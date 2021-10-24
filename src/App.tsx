@@ -56,7 +56,7 @@ export const JsonSchemaToZod = () => {
             checked={module}
             onChange={(e) => setModule(e.target.checked)}
           ></input>
-          <b>Json</b>
+          <b>Json Schema</b>
           <textarea
             style={{ width: 400, height: 400 }}
             value={json}
