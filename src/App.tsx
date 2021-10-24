@@ -27,6 +27,14 @@ export const JsonSchemaToZod = () => {
     }
   }, [json, name, module]);
 
+  const format = () => {
+    try {
+      setJson(JSON.stringify(json5.parse(json), null, 2));
+    } catch (e) {
+      setErrors(`Errors:\n${e}`);
+    }
+  };
+
   return (
     <>
       <h1>Json Schema To Zod</h1>
@@ -54,6 +62,13 @@ export const JsonSchemaToZod = () => {
             value={json}
             onChange={(e) => setJson(e.target.value)}
           ></textarea>
+          <button
+            style={{ width: "100%" }}
+            disabled={!!errors}
+            onClick={() => format()}
+          >
+            Format
+          </button>
         </div>
         <div
           style={{
@@ -68,7 +83,7 @@ export const JsonSchemaToZod = () => {
           <textarea
             style={{
               width: 400,
-              height: 455,
+              height: 476,
               color: errors ? "red" : "black",
             }}
             value={errors || zod}
