@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { jsonSchemaToZod } from "./json-schema-to-zod";
+import { jsonSchemaToZod } from "json-schema-to-zod";
 import copy from "copy-to-clipboard";
 import json5 from "json5";
 import $RefParser from "@apidevtools/json-schema-ref-parser";
