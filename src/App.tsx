@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { jsonSchemaToZod } from "json-schema-to-zod";
 import copy from "copy-to-clipboard";
+import { jsonSchemaToZodDereffed } from "json-schema-to-zod";
 import json5 from "json5";
-import $RefParser from "@apidevtools/json-schema-ref-parser";
+import React, { useEffect, useState } from "react";
 
 export const JsonSchemaToZod = () => {
   const [json, setJson] = useState("{}");
@@ -15,11 +14,10 @@ export const JsonSchemaToZod = () => {
     try {
       const parsed = json5.parse(json);
       setErrors("");
-      $RefParser
-        .dereference(parsed)
+      jsonSchemaToZodDereffed(parsed as any, name, module)
         .then((x) => {
           console.log(x);
-          setZod(jsonSchemaToZod(x as any, name, module));
+          setZod(x);
         })
         .catch((e) => setErrors(`Errors:\n${e}`));
     } catch (e) {
