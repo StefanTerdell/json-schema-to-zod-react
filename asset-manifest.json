@@ -4,16 +4,16 @@
     "main.js.map": "/json-schema-to-zod-react/static/js/main.d21a0ef3.chunk.js.map",
     "runtime-main.js": "/json-schema-to-zod-react/static/js/runtime-main.a2b240ba.js",
     "runtime-main.js.map": "/json-schema-to-zod-react/static/js/runtime-main.a2b240ba.js.map",
-    "static/js/2.a96c311e.chunk.js": "/json-schema-to-zod-react/static/js/2.a96c311e.chunk.js",
-    "static/js/2.a96c311e.chunk.js.map": "/json-schema-to-zod-react/static/js/2.a96c311e.chunk.js.map",
+    "static/js/2.4da856cd.chunk.js": "/json-schema-to-zod-react/static/js/2.4da856cd.chunk.js",
+    "static/js/2.4da856cd.chunk.js.map": "/json-schema-to-zod-react/static/js/2.4da856cd.chunk.js.map",
     "static/js/3.e437baf9.chunk.js": "/json-schema-to-zod-react/static/js/3.e437baf9.chunk.js",
     "static/js/3.e437baf9.chunk.js.map": "/json-schema-to-zod-react/static/js/3.e437baf9.chunk.js.map",
     "index.html": "/json-schema-to-zod-react/index.html",
-    "static/js/2.a96c311e.chunk.js.LICENSE.txt": "/json-schema-to-zod-react/static/js/2.a96c311e.chunk.js.LICENSE.txt"
+    "static/js/2.4da856cd.chunk.js.LICENSE.txt": "/json-schema-to-zod-react/static/js/2.4da856cd.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a2b240ba.js",
-    "static/js/2.a96c311e.chunk.js",
+    "static/js/2.4da856cd.chunk.js",
     "static/js/main.d21a0ef3.chunk.js"
   ]
 }
