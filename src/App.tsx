@@ -1,5 +1,6 @@
 import copy from "copy-to-clipboard";
 import { jsonSchemaToZodDereffed } from "json-schema-to-zod";
+import { version } from "json-schema-to-zod/package.json";
 import json5 from "json5";
 import React, { useEffect, useState } from "react";
 
@@ -35,7 +36,7 @@ export const JsonSchemaToZod = () => {
 
   return (
     <>
-      <h1>Json Schema To Zod</h1>
+      <h1>Json Schema To Zod {version}</h1>
       <div style={{ display: "flex" }}>
         <div
           style={{
@@ -86,7 +87,7 @@ export const JsonSchemaToZod = () => {
             }}
             value={errors || zod}
             // @ts-expect-error
-            onClick={(e) => e.target.select()}
+            onClick={(e) => e.target.select?.()}
           ></textarea>
           <button
             style={{ width: "100%" }}
@@ -102,7 +103,7 @@ export const JsonSchemaToZod = () => {
       </a>
       <br />
       <a href="https://www.github.com/stefanTerdell/json-schema-to-zod">
-        Something borken? Please log an issue here
+        Log an issue, open a feature PR or just leave a ⭐ here ^^
       </a>
     </>
   );
