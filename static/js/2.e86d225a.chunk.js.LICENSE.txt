@@ -17,21 +17,9 @@ object-assign
 
 /*! js-yaml 4.1.0 https://github.com/nodeca/js-yaml @license MIT */
 
-/**
-  	 * @license
-  	 * Copyright Google Inc. All Rights Reserved.
-  	 *
-  	 * Use of this source code is governed by an MIT-style license that can be
-  	 * found in the LICENSE file at https://angular.io/license
-  	 */
+/*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/facebook/regenerator/blob/main/LICENSE */
 
-/**
-    	   * @license
-    	   * Copyright Google Inc. All Rights Reserved.
-    	   *
-    	   * Use of this source code is governed by an MIT-style license that can be
-    	   * found in the LICENSE file at https://angular.io/license
-    	   */
+/*! safe-buffer. MIT License. Feross Aboukhadijeh <https://feross.org/opensource> */
 
 /** @license React v0.20.2
  * scheduler.production.min.js
