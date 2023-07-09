@@ -9,13 +9,18 @@ export const JsonSchemaToZod = () => {
   const [zod, setZod] = useState("");
   const [errors, setErrors] = useState("");
   const [name, setName] = useState("");
-  const [module, setModule] = useState(true);
+  const [module, setModule] = useState("esm");
+  const [rc, setRc] = useState(0);
 
   useEffect(() => {
     try {
       const parsed = json5.parse(json);
       setErrors("");
-      jsonSchemaToZodDereffed(parsed as any, name, module)
+      jsonSchemaToZodDereffed(parsed as any, {
+        name,
+        module: module === "esm" || module === "cjs" ? module : false,
+        recursionDepth: rc,
+      })
         .then((x) => {
           console.log(x);
           setZod(x);
@@ -24,7 +29,7 @@ export const JsonSchemaToZod = () => {
     } catch (e) {
       setErrors(`Errors:\n${e}`);
     }
-  }, [json, name, module]);
+  }, [json, name, module, rc]);
 
   const format = () => {
     try {
@@ -50,11 +55,24 @@ export const JsonSchemaToZod = () => {
           <b>Schema name</b>
           <input value={name} onChange={(e) => setName(e.target.value)}></input>
           <b>Module</b>
+          <select value={module} onChange={(e) => setModule(e.target.value)}>
+            <option>esm</option>
+            <option>cjs</option>
+            <option>none</option>
+          </select>
+          <b>Recursion depth</b>
           <input
-            type="checkbox"
-            checked={module}
-            onChange={(e) => setModule(e.target.checked)}
-          ></input>
+            type="number"
+            step={1}
+            min={0}
+            value={rc}
+            onChange={(e) => {
+              const rc = Number(e.target.value);
+              if (!isNaN(rc) && rc >= 0) {
+                setRc(Math.round(rc));
+              }
+            }}
+          />
           <b>Json Schema</b>
           <textarea
             style={{ width: 400, height: 400 }}
@@ -82,7 +100,7 @@ export const JsonSchemaToZod = () => {
           <textarea
             style={{
               width: 400,
-              height: 476,
+              height: 522,
               color: errors ? "red" : "black",
             }}
             value={errors || zod}
